@@ -1,0 +1,61 @@
+@import url("[https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@500;700&family=Sarabun:wght@400;600&display=swap](https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@500;700&family=Sarabun:wght@400;600&display=swap)");
+@import "tailwindcss";
+
+:root {
+  /* Core Brand Colors (Refined Shades for Sophistication) */
+  --color-primary-gray: #333333; /* Darker, richer charcoal for primary elements/text */
+  --color-secondary-gray: #f0f0f0; /* Very light gray for clean backgrounds */
+  --color-accent-red: #c62828; /* Deeper, more elegant red */
+  --color-neutral-white: #ffffff; /* Pure white for contrast */
+  --color-subtle-blue: #5c6bc0; /* Slightly muted, sophisticated blue for accent/graphs */
+
+  /* Status Colors for Data (Adjusted for better integration) */
+  --color-status-positive: #4caf50; /* Green - remains clear */
+  --color-status-negative: var(
+    --color-accent-red
+  ); /* Red - consistent with accent red */
+  --color-status-caution: #ffb300; /* Richer amber yellow for caution */
+
+  /* Global Background and Foreground */
+  --background: var(
+    --color-secondary-gray
+  ); /* Page background: very light gray */
+  --foreground: var(--color-primary-gray); /* Default text color: dark gray */
+
+  /* Fonts as CSS variables */
+  --font-heading: "IBM Plex Sans Thai";
+  --font-body: "Sarabun";
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-geist-mono);
+
+  /* Expose new colors to Tailwind's @theme */
+  --color-primary-gray: var(--color-primary-gray);
+  --color-secondary-gray: var(--color-secondary-gray);
+  --color-accent-red: var(--color-accent-red);
+  --color-neutral-white: var(--color-neutral-white);
+  --color-subtle-blue: var(--color-subtle-blue);
+
+  --color-status-positive: var(--color-status-positive);
+  --color-status-negative: var(--color-status-negative);
+  --color-status-caution: var(--color-status-caution);
+}
+ 
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), sans-serif;
+}

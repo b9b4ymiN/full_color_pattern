@@ -3,7 +3,6 @@ import type { Metadata } from "next";
 // Import Google Fonts directly here as well if you want to use Next.js Font Optimization
 // import { Kanit, Sarabun } from 'next/font/google';
 
-import "./globalsv3.css"; // Import your global CSS file
 
 // If using next/font, define them here:
 // const kanit = Kanit({

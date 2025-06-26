@@ -1,5 +1,6 @@
 // app/page.tsx
- 
+import "./globalsv3.css"; // Import your global CSS file
+
 export default function Home() {
   return (
     <main className="min-h-screen p-8 bg-bg-white text-text-dark">

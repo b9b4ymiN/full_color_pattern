@@ -1,5 +1,5 @@
 // app/page.tsx
-import "../dek.css";
+import "../master.css";
 // app/page.tsx
 export default function Home() {
   return (
