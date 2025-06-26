@@ -1,0 +1,103 @@
+
+@import url("[https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@500;700&family=Sarabun:wght@400;600&display=swap](https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@500;700&family=Sarabun:wght@400;600&display=swap)");
+@import "tailwindcss";
+
+:root {
+  /* Colors from the provided image palette (Light Mode) */
+  --color-dashboard-background: #E9EDF2; /* Dashboard background  */
+  --color-widget-background: #FFFFFF;    /* Widget background  */
+  --color-widget-title-background: #FFFFFF; /* Widget title background  */
+
+  --color-primary-text: #062A7A;   /* Primary text color  */
+  --color-secondary-text: #5572AF; /* Secondary text color  */
+  --color-accent: #062A7A;         /* Accent color  */
+
+  /* Chart Theme Colors (Light Mode) */
+  --color-chart-1: #062A7A; /* Dark Blue  */
+  --color-chart-2: #3B62DC; /* Bright Blue  */
+  --color-chart-3: #70A0F7; /* Light Blue  */
+  --color-chart-4: #B0792A; /* Brown/Gold  */
+  --color-chart-5: #FFC935; /* Yellow  */
+  --color-chart-6: #E8E7E1; /* Light Gray  */
+
+  /* Semantic Colors for Data Status (Light Mode) */
+  --color-semantic-positive: #4AE9BD; /* Green/Teal for positive  */
+  --color-semantic-negative: #F9566E; /* Red/Pink for negative  */
+  --color-semantic-caution: var(--color-chart-5); /* Using yellow from chart theme for caution */
+
+  /* Global Background and Foreground based on new palette (Light Mode) */
+  --background: var(--color-dashboard-background); /* Page background */
+  --foreground: var(--color-primary-text);       /* Default text color */
+
+  /* Fonts as CSS variables */
+  --font-heading: "IBM Plex Sans Thai";
+  --font-body: "Sarabun";
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-geist-mono); 
+
+  /* Expose new colors to Tailwind's @theme */
+  --color-dashboard-background: var(--color-dashboard-background);
+  --color-widget-background: var(--color-widget-background);
+  --color-widget-title-background: var(--color-widget-title-background);
+  --color-primary-text: var(--color-primary-text);
+  --color-secondary-text: var(--color-secondary-text);
+  --color-accent: var(--color-accent);
+  --color-chart-1: var(--color-chart-1);
+  --color-chart-2: var(--color-chart-2);
+  --color-chart-3: var(--color-chart-3);
+  --color-chart-4: var(--color-chart-4);
+  --color-chart-5: var(--color-chart-5);
+  --color-chart-6: var(--color-chart-6);
+  --color-semantic-positive: var(--color-semantic-positive);
+  --color-semantic-negative: var(--color-semantic-negative);
+  --color-semantic-caution: var(--color-semantic-caution);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* --- Adjusted for a dark mode based on the new image palette --- */
+    --background: #1E1F30; /* Deep indigo/navy for dark mode dashboard background */
+    --foreground: #F2F2F2; /* White/very light gray text for dark mode */
+
+    --color-dashboard-background: #1E1F30; /* Same as --background */
+    --color-widget-background: #2A2C40;    /* Slightly lighter dark for widget background */
+    --color-widget-title-background: #2A2C40; /* Same as widget background */
+
+    --color-primary-text: #F2F2F2;   /* Primary text for dark mode */
+    --color-secondary-text: #A0AEC0; /* Lighter gray for secondary text */
+    --color-accent: #63B3ED;         /* Brighter blue accent for dark mode */
+
+    /* Chart Theme Colors (Dark Mode - adjusted for contrast) */
+    --color-chart-1: #4A8AF5; /* Vibrant Blue */
+    --color-chart-2: #78B0FF; /* Lighter Blue */
+    --color-chart-3: #ADD8E6; /* Even Lighter Blue */
+    --color-chart-4: #D69E2E; /* Adjusted Brown/Gold */
+    --color-chart-5: #ECC94B; /* Adjusted Yellow */
+    --color-chart-6: #A0AEC0; /* Neutral Grey */
+
+    /* Semantic Colors for Data Status (Dark Mode - adjusted for contrast) */
+    --color-semantic-positive: #68D391; /* Green */
+    --color-semantic-negative: #FC8181; /* Red */
+    --color-semantic-caution: #F6AD55; /* Amber Yellow */
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), sans-serif;
+}

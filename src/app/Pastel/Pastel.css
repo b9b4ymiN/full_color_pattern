@@ -61,28 +61,32 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Adjust for a dark mode if needed, using the existing palette as a guide */
-    --background: #1a202c; /* Dark blue-gray for dark mode background */
-    --foreground: #e2e8f0; /* Light text for dark mode */
+    /* --- Adjusted for dark mode based on image_c7a6d5.png --- */
+    --background: #233459; /* Dashboard background */
+    --foreground: #dae1f1; /* Primary text for dark mode */
 
-    --color-dashboard-background: #1a202c;
-    --color-widget-background: #2d3748;
-    --color-widget-title-background: #2d3748;
+    --color-dashboard-background: #233459;
+    --color-widget-background: #131f39; /* Widget background */
+    --color-widget-title-background: #233459; /* Widget title background */
 
-    --color-primary-text: #e2e8f0;
-    --color-secondary-text: #a0aec0;
-    --color-accent: #63b3ed; /* Brighter blue accent for dark mode */
+    --color-primary-text: #dae1f1; /* Primary text */
+    --color-secondary-text: #7d94c5; /* Secondary text */
+    --color-accent: #cdf80c; /* Accent color */
 
-    --color-chart-1: #63b3ed;
-    --color-chart-2: #4299e1;
-    --color-chart-3: #90cdf4;
-    --color-chart-4: #d69e2e;
-    --color-chart-5: #ecc94b;
-    --color-chart-6: #a0aec0;
+    /* Chart Theme Colors (Dark Mode) */
+    --color-chart-1: #cdf80c; /* Chart 1 */
+    --color-chart-2: #9ea306; /* Chart 2 */
+    --color-chart-3: #96a305; /* Chart 3 */
+    --color-chart-4: #5572af; /* Chart 4 */
+    --color-chart-5: #7d94c5; /* Chart 5 */
+    --color-chart-6: #98c5e5; /* Chart 6 */
 
-    --color-semantic-positive: #68d391;
-    --color-semantic-negative: #fc8181;
-    --color-semantic-caution: #f6ad55;
+    /* Semantic Colors for Data Status (Dark Mode) */
+    --color-semantic-positive: #2cc990; /* Semantic-Positive */
+    --color-semantic-negative: #ff9179; /* Semantic-Negative */
+    --color-semantic-caution: var(
+      --color-chart-1
+    ); /* Using Chart 1 color for caution in dark mode */
   }
 }
 
