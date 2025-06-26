@@ -1,0 +1,60 @@
+/* app/globals.css - สไตล์: นกฮูก Mascot */
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Sarabun:wght@400;600&display=swap');
+@import "tailwindcss"; /* คงไว้ตามที่คุณต้องการ */
+
+:root {
+  /* Colors from the Owl Mascot and Blue Background */
+  --color-primary-blue: #36A3F9; /* Vibrant Blue for background, like image_6ded7c.png */
+  --color-owl-body: #4A5568;     /* Dark blue/grey of owl's main body */
+  --color-owl-belly: #EBF8FF;    /* Light blue/white of owl's belly */
+  --color-owl-overalls-red: #DC2626; /* Red of owl's overalls */
+  --color-owl-accent-yellow: #FBBF24; /* Yellow for beak/feet */
+  --color-text-dark: #1A202C;    /* Dark text for light backgrounds */
+  --color-text-light: #F7FAFC;   /* Light text for dark backgrounds */
+
+
+  /* Global Background and Foreground */
+  --background: var(--color-primary-blue); /* Main page background */
+  --foreground: var(--color-text-light);   /* Default text color on main background */
+
+  /* Fonts as CSS variables */
+  --font-kanit: 'Kanit';
+  --font-sarabun: 'Sarabun';
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sarabun);
+  --font-mono: var(--font-geist-mono); /* Keep if used, otherwise remove */
+
+  /* Expose new colors to Tailwind's @theme */
+  --color-primary-blue: var(--color-primary-blue);
+  --color-owl-body: var(--color-owl-body);
+  --color-owl-belly: var(--color-owl-belly);
+  --color-owl-overalls-red: var(--color-owl-overalls-red);
+  --color-owl-accent-yellow: var(--color-owl-accent-yellow);
+  --color-text-dark: var(--color-text-dark);
+  --color-text-light: var(--color-text-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #000000; /* Darker background in dark mode */
+    --foreground: #FFFFFF; /* Lighter text in dark mode */
+    /* Adjust specific colors for dark mode if desired */
+    --color-primary-blue: #0A6BBF; /* Slightly darker blue for dark mode */
+    --color-owl-overalls-red: #B00000;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sarabun), sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-kanit), sans-serif;
+}

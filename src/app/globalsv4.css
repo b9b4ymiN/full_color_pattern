@@ -1,0 +1,61 @@
+/* app/globals.css - สไตล์: Jinjja Chicken Logo */
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Sarabun:wght@400;600&display=swap");
+@import "tailwindcss"; /* คงไว้ตามที่คุณต้องการ */
+
+:root {
+  /* กำหนดสีหลักจากภาพ Jinjja Chicken */
+  --color-primary-blue: #0046be; /* Dark Blue from Shopee mascot / Jinjja Chicken logo */
+  --color-accent-red: #b20400; /* Red from Shopee mascot */
+  --color-accent-yellow: #f9ac12; /* Yellow from Shopee mascot / Jinjja Chicken logo */
+  --color-neutral-cream: #f4e7d4; /* Cream/Off-white from Shopee mascot */
+
+  /* สีสำหรับ Text และ Background (ปรับให้ "เท่" แบบในรูป) */
+  --background: #0169fe; /* พื้นหลังหลักเป็นสีน้ำเงินเข้ม */
+  --foreground: var(--color-neutral-cream); /* ข้อความหลักเป็นสีขาวนวล */
+
+  --color-text-dark: #171717; /* สำหรับข้อความบนพื้นหลังสว่าง */
+  --color-text-light: var(
+    --color-neutral-cream
+  ); /* ใช้สีขาวนวลสำหรับข้อความรองบนพื้นหลังเข้ม */
+
+  /* Fonts as CSS variables */
+  --font-kanit: "Kanit";
+  --font-sarabun: "Sarabun";
+}
+
+@theme inline { 
+  --font-sans: var(--font-sarabun);
+  --font-mono: var(--font-geist-mono);
+
+  /* เพิ่มการอ้างอิงสีใหม่ใน @theme inline */
+  --color-primary-blue: var(--color-primary-blue);
+  --color-accent-red: var(--color-accent-red);
+  --color-accent-yellow: var(--color-accent-yellow);
+  --color-neutral-cream: var(--color-neutral-cream);
+  --color-text-dark: var(--color-text-dark);
+  --color-text-light: var(--color-text-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root { 
+    --color-primary-blue: #003399;
+    --color-accent-red: #cc2900;
+    --color-accent-yellow: #ffc43d;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sarabun), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-kanit), sans-serif;
+}

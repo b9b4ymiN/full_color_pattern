@@ -1,0 +1,67 @@
+/* app/globals.css - สไตล์ที่ 2: โมเดิร์นและมินิมอล */
+
+@import url("https://fonts.googleapis.com/css2?family=Prompt:wght@600;700&family=IBM+Plex+Sans+Thai:wght@400;600&display=swap");
+@import "tailwindcss"; /* คงไว้ตามที่คุณต้องการ */
+
+:root {
+  /* Existing background/foreground variables from your provided code */
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* --- โค้ดสีสำหรับสไตล์ที่ 2 --- */
+  --color-primary-blue: #1a2b4a;
+  --color-secondary-yellow: #f0ad4e;
+  --color-accent-light-blue: #e9ecef; /* ใช้ชื่อเดิมแต่เป็นสีเทา */
+  --color-text-dark: #212529;
+  --color-text-light: #495057;
+  --color-bg-white: #ffffff;
+  /* --- สิ้นสุดโค้ดสี --- */
+
+  /* Fonts as CSS variables */
+  --font-heading: "Prompt";
+  --font-body: "IBM Plex Sans Thai";
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-body); /* ใช้ font-body เป็น font-sans */
+  --font-mono: var(--font-geist-mono);
+
+  /* เพิ่มการอ้างอิงสีใหม่ใน @theme inline */
+  --color-primary-blue: var(--color-primary-blue);
+  --color-secondary-yellow: var(--color-secondary-yellow);
+  --color-accent-light-blue: var(--color-accent-light-blue);
+  --color-text-dark: var(--color-text-dark);
+  --color-text-light: var(--color-text-light);
+  --color-bg-white: var(--color-bg-white);
+
+  /* เพิ่มการอ้างอิงฟอนต์ใหม่ใน @theme inline */
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    /* ตัวอย่างการปรับสีใน dark mode สำหรับสไตล์นี้ */
+    --color-primary-blue: #2a3d5e;
+    --color-secondary-yellow: #f5c478;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif; /* ใช้ font-body เป็นหลักสำหรับ body */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), sans-serif;
+}

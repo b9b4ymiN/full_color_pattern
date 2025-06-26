@@ -1,0 +1,44 @@
+/* app/globals.css - สไตล์: มาสคอตเด็กทำอาหาร */
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Sarabun:wght@400;600&display=swap");
+@import "tailwindcss";
+
+:root {
+  /* กำหนดสีตามภาพมาสคอต */
+  --color-primary-teal: #00c4b6; /* สีเขียวอมฟ้า (Teal) จากพื้นหลัง */
+  --color-accent-orange: #ff5602; /* สีส้ม (Orange) จากองค์ประกอบ */
+  --color-text-dark: #022535; /* สีดำเข้ม (Dark) สำหรับข้อความ */
+  --color-background: #fefdf9; /* ใช้สีเขียวอมฟ้าเป็นพื้นหลังหลัก */
+  --color-foreground: var(--color-text-dark); /* ข้อความสีขาว */
+
+  /* Fonts as CSS variables */
+  --font-kanit: "Kanit";
+  --font-sarabun: "Sarabun";
+}
+
+@theme inline {
+  --color-background: var(--color-background);
+  --color-foreground: var(--color-foreground);
+  --font-sans: var(--font-sarabun);
+  --font-mono: var(--font-geist-mono); /* Keep if used, otherwise remove */
+
+  /* Expose new colors to Tailwind's @theme */
+  --color-primary-teal: var(--color-primary-teal);
+  --color-accent-orange: var(--color-accent-orange);
+  --color-text-dark: var(--color-text-dark);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sarabun), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-kanit), sans-serif;
+}

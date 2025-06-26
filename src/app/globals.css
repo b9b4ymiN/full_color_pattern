@@ -1,8 +1,22 @@
 @import "tailwindcss";
 
 :root {
+  /* Existing background/foreground variables from your provided code */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* --- เพิ่มโค้ดสีที่เราคุยกันไว้ตรงนี้ --- */
+  --color-primary-blue: #007bff;
+  --color-secondary-yellow: #ffc107;
+  --color-accent-light-blue: #add8e6;
+  --color-text-dark: #343a40;
+  --color-text-light: #6c757d;
+  --color-bg-white: #ffffff; /* หากต้องการใช้เป็นพื้นหลังหลักตามสไตล์แรก */
+
+  /* Fonts as CSS variables for easier use in tailwind.config.ts (Optional, but useful) */
+  --font-kanit: "Kanit";
+  --font-sarabun: "Sarabun";
+  /* --- สิ้นสุดการเพิ่มโค้ดสี --- */
 }
 
 @theme inline {
@@ -10,17 +24,49 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* --- เพิ่มการอ้างอิงสีใหม่ใน @theme inline (ถ้า @theme inline เป็น syntax ที่คุณใช้งานได้) --- */
+  --color-primary-blue: var(--color-primary-blue);
+  --color-secondary-yellow: var(--color-secondary-yellow);
+  --color-accent-light-blue: var(--color-accent-light-blue);
+  --color-text-dark: var(--color-text-dark);
+  --color-text-light: var(--color-text-light);
+  --color-bg-white: var(--color-bg-white);
+  /* --- สิ้นสุดการเพิ่ม --- */
+
+  /* --- เพิ่มการอ้างอิงฟอนต์ใหม่ใน @theme inline (ถ้า @theme inline เป็น syntax ที่คุณใช้งานได้) --- */
+  --font-kanit: var(--font-kanit);
+  --font-sarabun: var(--font-sarabun);
+  /* --- สิ้นสุดการเพิ่ม --- */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    /* --- เพิ่มการกำหนดสีสำหรับ Dark Mode (หากต้องการ) --- */
+    /* ตัวอย่าง: ปรับสี primary blue ให้เข้มขึ้นใน dark mode */
+    --color-primary-blue: #0056b3; /* Darker shade of primary blue */
+    /* หรือให้เป็นค่าเดิมถ้าไม่ต้องการปรับ */
+    /* --color-secondary-yellow: #ffc107; */
+    /* ... อื่นๆ ตามต้องการใน dark mode ... */
+    /* --- สิ้นสุดการเพิ่ม --- */
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif; /* คุณจะต้องจัดการการ import font Kanit และ Sarabun เอง */
+}
+
+/* เพิ่ม styles พื้นฐานสำหรับ H1-H6 เพื่อใช้ font-kanit หากคุณไม่ได้ใช้ Tailwind classes */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-kanit), sans-serif;
 }
